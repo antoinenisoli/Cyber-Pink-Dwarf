@@ -108,20 +108,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        InteractWithMachine();
         GetCamera();
         GetInput();
         Move();
         Aim();
         Life();
-        DetectMob();
-        InteractWithMachine();
+        DetectMob();       
         BodyAnimation();
-        PlaySounds();
-    }
-
-    void PlaySounds()
-    {
-
     }
 
     void BodyAnimation()
@@ -221,14 +215,18 @@ public class PlayerController : MonoBehaviour
     public void Damage(int dmg)
     {
         StartCoroutine(TakeDmg(dmg));
+
     }
 
     public IEnumerator TakeDmg(int dmg)
     {
-        spr.material = lightMat;       
-        yield return new WaitForSeconds(0.1f);
-        spr.material = startMat;
-        health -= dmg;
+        if (spr.material == startMat)
+        {
+            health -= dmg;
+            spr.material = lightMat;
+            yield return new WaitForSeconds(1.25f);
+            spr.material = startMat;
+        }               
     }
 
     void Life()

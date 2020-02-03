@@ -11,7 +11,6 @@ public class GMscript : MonoBehaviour
     public float StartSabotage = 5;
     private GameObject player;
     private PlayerController playerScript;
-    private UIwagon wagonscript;
     private Animator anim;
 
     public GameObject Warning;
@@ -21,16 +20,31 @@ public class GMscript : MonoBehaviour
     public float damageAmount = 0.01f;
 
     public Collider2D selectedRoom;
+
+    public Transform marker;
+    public Collider2D room00;
+    public Collider2D room01;
+    public Collider2D room02;
+    public Collider2D room03;
+    public Collider2D room04;
     public Collider2D generatorRoom;
     public Collider2D engineRoom;
     public Collider2D cockpitRoom;
+
+    public Transform pos00;
+    public Transform pos01;
+    public Transform pos02;
+    public Transform pos03;
+    public Transform pos04;
+    public Transform posEngine;
+    public Transform posCockpit;
+    public Transform posGenerator;
 
     public AudioSource alarmSound;
     private bool alarm;
 
     public void Start()
     {
-        wagonscript = FindObjectOfType<UIwagon>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerController>();
         anim = GetComponentInParent<Animator>();
@@ -44,6 +58,7 @@ public class GMscript : MonoBehaviour
     void Update()
     {
         wagonHealth = Mathf.Clamp(wagonHealth, 0, wagonHealthMax);
+        Minimap();
         TakeDmg();
         CheckHealth();                      
     }
@@ -82,6 +97,34 @@ public class GMscript : MonoBehaviour
     public void CallRandomGenerator(int time)
     {
         StartCoroutine(GenerateRandom(time));
+    }
+
+    public void Minimap()
+    {
+        if (playerScript.room = room00)
+        {
+            marker.position = pos00.position;
+        }
+
+        if (playerScript.room = room01)
+        {
+            marker.position = pos01.position;
+        }
+
+        if (playerScript.room = room02)
+        {
+            marker.position = pos02.position;
+        }
+
+        if (playerScript.room = room03)
+        {
+            marker.position = pos03.position;
+        }
+
+        if (playerScript.room = room04)
+        {
+            marker.position = pos04.position;
+        }
     }
 
     public IEnumerator GenerateRandom(int second)

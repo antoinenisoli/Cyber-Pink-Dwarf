@@ -11,6 +11,9 @@ public class EnnemyDistance : MonoBehaviour
     public Transform shootPoint;
     private Vector2 startpos;
 
+    public bool firstShoot = false;
+    private bool canShoot;
+    public float delay;
     public float fireRate = 1;
     private float nextFire;
 
@@ -51,6 +54,13 @@ public class EnnemyDistance : MonoBehaviour
         health = healthMax;
     }
 
+    private void OnEnable()
+    {
+        firstShoot = false;
+        canShoot = false;
+        
+    }
+
     void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("Room"))
@@ -70,6 +80,13 @@ public class EnnemyDistance : MonoBehaviour
         AimThePlayer();
         FollowPlayer();
         Life();
+    }
+
+    IEnumerator CanShoot()
+    {
+        firstShoot = false;
+        yield return new WaitForSeconds(delay);
+        canShoot = true;
     }
 
     private void FollowPlayer()
@@ -118,7 +135,12 @@ public class EnnemyDistance : MonoBehaviour
 
         if (players.Length != 0)
         {
-            if (ThisRoom == playerScript.room && playerScript.health > 0)
+            if (!firstShoot)
+            {
+                StartCoroutine(CanShoot());
+            }
+
+            if (ThisRoom == playerScript.room && playerScript.health > 0 && canShoot)
             {
                 if (Time.time > nextFire)
                 {
@@ -131,7 +153,7 @@ public class EnnemyDistance : MonoBehaviour
 
     void Shoot()
     {
-        if (health >= 0)
+        if (health > 0)
         {
             GameObject b = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity) as GameObject;
             shotSound.Play();

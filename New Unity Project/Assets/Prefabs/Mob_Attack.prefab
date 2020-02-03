@@ -455,6 +455,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7337481600832104799, guid: 6547c3a994fcec64884051accf4046ea,
     type: 3}
   shootPoint: {fileID: 8717025957137513314}
+  firstShoot: 0
+  delay: 1
   fireRate: 2
   spr: {fileID: 5708515440284788611}
   startMat: {fileID: 0}
