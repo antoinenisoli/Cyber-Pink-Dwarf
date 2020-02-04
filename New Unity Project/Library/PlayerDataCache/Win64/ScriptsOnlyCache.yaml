@@ -10,7 +10,6 @@ ScriptsOnlyBuild:
     - EnnemySpawner
     - FinalScore
     - GMscript
-    - HealObject
     - Machine
     - MachineAnimationManager
     - MenuGoGame
@@ -80,17 +79,17 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9676}
+      Script: {instanceID: 9702}
     - Class: 114
-      Script: {instanceID: 9888}
+      Script: {instanceID: 9914}
     - Class: 114
-      Script: {instanceID: 10284}
+      Script: {instanceID: 10312}
     - Class: 114
-      Script: {instanceID: 11140}
+      Script: {instanceID: 11176}
     - Class: 114
-      Script: {instanceID: 11512}
+      Script: {instanceID: 11492}
     - Class: 114
-      Script: {instanceID: 1358710}
+      Script: {instanceID: 11554}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -137,27 +136,27 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9676}
+      Script: {instanceID: 9702}
     - Class: 114
-      Script: {instanceID: 9888}
+      Script: {instanceID: 9914}
     - Class: 114
-      Script: {instanceID: 10284}
+      Script: {instanceID: 10312}
     - Class: 114
-      Script: {instanceID: 10310}
+      Script: {instanceID: 10338}
     - Class: 114
-      Script: {instanceID: 10890}
+      Script: {instanceID: 10924}
     - Class: 114
-      Script: {instanceID: 10904}
+      Script: {instanceID: 10938}
     - Class: 114
-      Script: {instanceID: 11140}
+      Script: {instanceID: 11176}
     - Class: 114
-      Script: {instanceID: 11302}
+      Script: {instanceID: 11338}
     - Class: 114
-      Script: {instanceID: 11512}
+      Script: {instanceID: 11444}
     - Class: 114
-      Script: {instanceID: 1358710}
+      Script: {instanceID: 11492}
     - Class: 114
-      Script: {instanceID: 2762636}
+      Script: {instanceID: 11554}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -214,61 +213,59 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9676}
+      Script: {instanceID: 9702}
     - Class: 114
-      Script: {instanceID: 9810}
+      Script: {instanceID: 9836}
     - Class: 114
-      Script: {instanceID: 9844}
+      Script: {instanceID: 9870}
     - Class: 114
-      Script: {instanceID: 9852}
+      Script: {instanceID: 9878}
     - Class: 114
-      Script: {instanceID: 9888}
+      Script: {instanceID: 9914}
     - Class: 114
-      Script: {instanceID: 10116}
+      Script: {instanceID: 10018}
     - Class: 114
-      Script: {instanceID: 10284}
+      Script: {instanceID: 10144}
     - Class: 114
-      Script: {instanceID: 10440}
+      Script: {instanceID: 10312}
     - Class: 114
-      Script: {instanceID: 10718}
+      Script: {instanceID: 10398}
     - Class: 114
-      Script: {instanceID: 10774}
+      Script: {instanceID: 10442}
     - Class: 114
-      Script: {instanceID: 10970}
+      Script: {instanceID: 10472}
     - Class: 114
-      Script: {instanceID: 11020}
+      Script: {instanceID: 10750}
     - Class: 114
-      Script: {instanceID: 11038}
+      Script: {instanceID: 10806}
     - Class: 114
-      Script: {instanceID: 11140}
+      Script: {instanceID: 10882}
     - Class: 114
-      Script: {instanceID: 11234}
+      Script: {instanceID: 10990}
     - Class: 114
-      Script: {instanceID: 11346}
+      Script: {instanceID: 11006}
     - Class: 114
-      Script: {instanceID: 11482}
+      Script: {instanceID: 11056}
     - Class: 114
-      Script: {instanceID: 11512}
+      Script: {instanceID: 11074}
     - Class: 114
-      Script: {instanceID: 11540}
+      Script: {instanceID: 11176}
     - Class: 114
-      Script: {instanceID: 11548}
+      Script: {instanceID: 11270}
     - Class: 114
-      Script: {instanceID: 11564}
+      Script: {instanceID: 11376}
     - Class: 114
-      Script: {instanceID: 129806}
+      Script: {instanceID: 11384}
     - Class: 114
-      Script: {instanceID: 320354}
+      Script: {instanceID: 11524}
     - Class: 114
-      Script: {instanceID: 608012}
+      Script: {instanceID: 11554}
     - Class: 114
-      Script: {instanceID: 1549218}
+      Script: {instanceID: 11582}
     - Class: 114
-      Script: {instanceID: 2664988}
+      Script: {instanceID: 11590}
     - Class: 114
-      Script: {instanceID: 2782272}
-    - Class: 114
-      Script: {instanceID: 3017084}
+      Script: {instanceID: 11606}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -324,7 +321,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: 676f6ae2954c38a40cb4a578642b1b6c
+      Hash: beda2a42867e571343f829ce6b3545f4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RoomManager
@@ -388,6 +385,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GridLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 3283915ab8d5b3c1aaf44efdb5f253c9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RedheadAnimManager
   - hash:
       serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
@@ -492,7 +495,19 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: f507752acf2e8205edf0d27e79503074
+      Hash: 22228f96fa59a5c5bcee79fb4a2bc6f4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UIwagonHealthBar
+  - hash:
+      serializedVersion: 2
+      Hash: f30d797b1fdd2a7b279639a3f34c6c9c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FinalScore
+  - hash:
+      serializedVersion: 2
+      Hash: ef995975c86b9299382660d74653579a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Door
@@ -552,7 +567,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: c8214e802838a2ce394ebeee8877afbc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MachineAnimationManager
@@ -568,6 +583,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIwagon
+  - hash:
+      serializedVersion: 2
+      Hash: bef25d547ba0d439f71549bf30dd790a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: script
   - hash:
       serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
@@ -612,25 +633,31 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: b5d72a6d5bee66153e8a23e2453b1bbc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GMscript
+  - hash:
+      serializedVersion: 2
       Hash: c1933cc0a2f4ff6eb13333347497beb3
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: ee11fb7d9bf18bfdc1ff76f2c13f3e22
+      Hash: a49c99c6cd6557fceb60116711bf673d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SkullAnimManager
   - hash:
       serializedVersion: 2
-      Hash: 843b1c1f1c283809492f238dba0072a8
+      Hash: 574429af984c712dbf344fc4a14bf5fb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Machine
   - hash:
       serializedVersion: 2
-      Hash: d35fa45d1344faf487c48acc761780b2
+      Hash: 35c7d9807ea0c22067472a6912ce66e9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -678,10 +705,22 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
+      Hash: bef25d547ba0d439f71549bf30dd790a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AfterGameOver
+  - hash:
+      serializedVersion: 2
       Hash: 26b9d7ddc005e02a7e3a9152b89aa198
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIlifebar
+  - hash:
+      serializedVersion: 2
+      Hash: 9796f674816b5acc20055047a569effd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Stay
   - hash:
       serializedVersion: 2
       Hash: df434544c9f7b33d1cc7e635b180d279
@@ -706,6 +745,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuGoGame
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -780,7 +825,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: f0b224382f96b049fd52792fab59866f
+      Hash: 21362a378b60ed0d82b50931a6e5511f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnnemyDistance
@@ -790,63 +835,9 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 34cc65019d6d4c0cf34ddaa92bc03b40
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: RedheadAnimManager
-  - hash:
-      serializedVersion: 2
-      Hash: 9e410a9ecbc136bad6593f7d4963ad08
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GMscript
-  - hash:
-      serializedVersion: 2
-      Hash: 22228f96fa59a5c5bcee79fb4a2bc6f4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UIwagonHealthBar
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MenuGoGame
-  - hash:
-      serializedVersion: 2
-      Hash: f30d797b1fdd2a7b279639a3f34c6c9c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FinalScore
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: HealObject
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Stay
-  - hash:
-      serializedVersion: 2
-      Hash: bef25d547ba0d439f71549bf30dd790a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AfterGameOver
-  - hash:
-      serializedVersion: 2
-      Hash: bef25d547ba0d439f71549bf30dd790a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: script
   platform: 19
   scenePathNames:
   - Assets/Scenes/main menu.unity
   - Assets/Scenes/commands.unity
   - Assets/Scenes/proto.unity
-  playerPath: C:/Users/ANISOLI/Documents/Pole 3d/Game Jam/Build/CyberPunkDwarf.exe
+  playerPath: G:/Mes Fichiers/Documents/Pole 3D/Game Jam/Global2020/Build/CyberPunkDwarf.exe
