@@ -14,6 +14,7 @@ public class Machine : MonoBehaviour
     public Collider2D thisRoom;
     public Door[] doors;
     public AudioSource repairingSound;
+    public AudioSource destroySound;
 
     void Start()
     {
@@ -28,6 +29,11 @@ public class Machine : MonoBehaviour
         {
             thisRoom = col;
         }
+    }
+
+    public void PlaySound()
+    {
+        destroySound.Play();
     }
 
     void Update()

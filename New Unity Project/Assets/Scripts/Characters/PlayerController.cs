@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Sounds")]
     public AudioSource shotSound;
+    public AudioSource hitSound;
 
     public bool blocked;
 
@@ -161,12 +162,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public IEnumerator Reload(int time)
-    {
-        yield return new WaitForSeconds(time);
-        SceneManager.LoadScene(2);
-    }
-
     void InteractWithMachine()
     {
         if (machineCollider != null)
@@ -198,6 +193,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        DetectMob();
+    }
+
     void DetectMob()
     {
         detect = Physics2D.OverlapCircle(collisionCenter.position, collisionRadius, ennemies);
@@ -206,7 +206,7 @@ public class PlayerController : MonoBehaviour
         {            
             if (Time.time > nextFire)
             {
-                Damage(1);
+                StartCoroutine(TakeDmg(1));
                 nextFire = Time.time + damageRate;
             }
         }
@@ -215,13 +215,37 @@ public class PlayerController : MonoBehaviour
     public void Damage(int dmg)
     {
         StartCoroutine(TakeDmg(dmg));
+    }
 
+    public IEnumerator Shake(float duration, float magnitude)
+    {
+        GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
+
+        Vector3 originalPos = camera.transform.parent.localPosition;
+
+        float elapsed = 0;
+
+        while (elapsed < duration)
+        {
+            float x = UnityEngine.Random.Range(-1f, 1f) * magnitude;
+            float y = UnityEngine.Random.Range(-1f, 1f) * magnitude;
+
+            camera.transform.parent.localPosition = new Vector3(x, y, originalPos.z);
+
+            elapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        camera.transform.parent.localPosition = originalPos;
     }
 
     public IEnumerator TakeDmg(int dmg)
     {
         if (spr.material == startMat)
         {
+            hitSound.Play();
+            StartCoroutine(Shake(0.15f, 0.2f));
             health -= dmg;
             spr.material = lightMat;
             yield return new WaitForSeconds(1.25f);
@@ -336,16 +360,10 @@ public class PlayerController : MonoBehaviour
 
             shotSound.Play();
 
-            if (!shotSound.isPlaying)
-            {
-                
-            }
-
             Rigidbody2D bulletPhysics = bullet.GetComponent<Rigidbody2D>();
             bullet.transform.position = shooter.position;
             bullet.transform.rotation = Quaternion.Euler(0, 0, rotation-90);
             bulletPhysics.velocity = dir * bulletSpeed;
-            
         }
     }
 }

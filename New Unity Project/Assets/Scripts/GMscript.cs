@@ -14,12 +14,14 @@ public class GMscript : MonoBehaviour
     private Animator anim;
 
     public GameObject Warning;
+    public Animator wagonAnim;
     public GameObject deathScreen;
     public float wagonHealth;
     public float wagonHealthMax = 100;
     public float damageAmount = 0.01f;
 
     public Collider2D selectedRoom;
+    public Collider2D thisRoom;
 
     public Transform marker;
     public Collider2D room00;
@@ -42,7 +44,7 @@ public class GMscript : MonoBehaviour
 
     public AudioSource alarmSound;
     private bool alarm;
-
+    
     public void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -57,21 +59,39 @@ public class GMscript : MonoBehaviour
 
     void Update()
     {
-        wagonHealth = Mathf.Clamp(wagonHealth, 0, wagonHealthMax);
         Minimap();
+        wagonHealth = Mathf.Clamp(wagonHealth, 0, wagonHealthMax);
+        //Reload();        
         TakeDmg();
         CheckHealth();                      
     }
 
+    private void FixedUpdate()
+    {
+        Minimap();
+    }
+
+    void Reload()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
+
     private void LateUpdate()
     {
+        Minimap();
+
         if (TakingDamage)
         {
             Warning.SetActive(true);
+            wagonAnim.speed = 1;
         }
         else
         {
             Warning.SetActive(false);
+            wagonAnim.speed = 3;
         }
     }
 
@@ -101,29 +121,37 @@ public class GMscript : MonoBehaviour
 
     public void Minimap()
     {
-        if (playerScript.room = room00)
+        if (playerScript.room == room00)
         {
             marker.position = pos00.position;
         }
-
-        if (playerScript.room = room01)
+        else if (playerScript.room == room01)
         {
             marker.position = pos01.position;
         }
-
-        if (playerScript.room = room02)
+        else if (playerScript.room == room02)
         {
             marker.position = pos02.position;
         }
-
-        if (playerScript.room = room03)
+        else if (playerScript.room == room03)
         {
             marker.position = pos03.position;
         }
-
-        if (playerScript.room = room04)
+        else if (playerScript.room == room04)
         {
             marker.position = pos04.position;
+        }
+        else if (playerScript.room == cockpitRoom)
+        {
+            marker.position = posCockpit.position;
+        }
+        else if (playerScript.room == engineRoom)
+        {
+            marker.position = posEngine.position;
+        }
+        else if (playerScript.room == generatorRoom)
+        {
+            marker.position = posGenerator.position;
         }
     }
 
@@ -144,7 +172,6 @@ public class GMscript : MonoBehaviour
         }
         if (random == 1 && playerScript.room == generatorRoom)
         {
-            print("Recommence");
             StartCoroutine(GenerateRandom(0));
         }
 
@@ -158,7 +185,6 @@ public class GMscript : MonoBehaviour
         }
         if (random == 2 && playerScript.room == cockpitRoom)
         {
-            print("Recommence");
             StartCoroutine(GenerateRandom(0));
         }
 
@@ -172,7 +198,6 @@ public class GMscript : MonoBehaviour
         }
         if (random == 3 && playerScript.room == engineRoom)
         {
-            print("Recommence");
             StartCoroutine(GenerateRandom(0));
         }        
     }

@@ -8,6 +8,8 @@ TagManager:
   - Machine
   - MachineZone
   - Heal
+  - Room00
+  - Room01
   layers:
   - Default
   - TransparentFX

@@ -35,6 +35,7 @@ public class BulletMob : MonoBehaviour
             if (col.GetComponent<Machine>())
             {
                 col.GetComponent<Machine>().isWorking = false;
+                col.GetComponent<Machine>().PlaySound();
             }
 
             anim.SetBool("dead", true);
