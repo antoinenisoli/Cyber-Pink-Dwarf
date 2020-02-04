@@ -456,6 +456,7 @@ MonoBehaviour:
     type: 3}
   shootPoint: {fileID: 8717025957137513314}
   firstShoot: 0
+  canShoot: 0
   delay: 1
   fireRate: 2
   spr: {fileID: 5708515440284788611}

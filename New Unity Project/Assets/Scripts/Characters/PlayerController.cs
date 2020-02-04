@@ -210,7 +210,7 @@ public class PlayerController : MonoBehaviour
                 nextFire = Time.time + damageRate;
             }
         }
-    }
+    }    
 
     public void Damage(int dmg)
     {

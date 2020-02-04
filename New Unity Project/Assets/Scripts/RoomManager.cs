@@ -96,12 +96,19 @@ public class RoomManager : MonoBehaviour
 
         foreach(Collider2D ennemy in ennemies)
         {
-            Destroy(ennemy);
+            Destroy(ennemy.gameObject);
         }
 
         foreach(Collider2D spawn in spawnPoints)
         {
             spawn.gameObject.GetComponent<EnnemySpawner>().Spawn();
+
+            EnnemyDistance[] skulls = FindObjectsOfType<EnnemyDistance>();
+            foreach (EnnemyDistance skull in skulls)
+            {
+                skull.canShoot = false;
+                skull.firstShoot = false;
+            }
         }
 
         foreach (Collider2D door in doors)

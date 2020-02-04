@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnnemySpawner : MonoBehaviour
 {
-    public RoomManager gmn;
     public GameObject mobPrefab;
 
     private void OnDrawGizmos()

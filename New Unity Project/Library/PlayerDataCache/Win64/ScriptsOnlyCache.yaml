@@ -345,7 +345,7 @@ ScriptsOnlyBuild:
     className: Scrollbar
   - hash:
       serializedVersion: 2
-      Hash: c89fb243e82950d0f8ed151e74378e8c
+      Hash: 26423940b6d6f1af382672bde88960ee
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnnemySpawner
@@ -807,7 +807,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: ba099696f9436de48f6a53329cb124cc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BulletMob
@@ -825,7 +825,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 21362a378b60ed0d82b50931a6e5511f
+      Hash: 37711a5f39ffd7589da27f1619f7c9de
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnnemyDistance
@@ -840,4 +840,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/main menu.unity
   - Assets/Scenes/commands.unity
   - Assets/Scenes/proto.unity
-  playerPath: G:/Mes Fichiers/Documents/Pole 3D/Game Jam/Global2020/Build/CyberPunkDwarf.exe
+  playerPath: C:/Users/ANISOLI/Documents/Pole 3d/Game Jam/Build/CyberPunkDwarf.exe

@@ -12,7 +12,7 @@ public class EnnemyDistance : MonoBehaviour
     private Vector2 startpos;
 
     public bool firstShoot = false;
-    private bool canShoot;
+    public bool canShoot;
     public float delay;
     public float fireRate = 1;
     private float nextFire;
@@ -50,8 +50,10 @@ public class EnnemyDistance : MonoBehaviour
         startpos = transform.position;
 
         startMat = spr.material;
-
         health = healthMax;
+
+        firstShoot = false;
+        canShoot = false;
     }
 
     private void OnEnable()
@@ -59,6 +61,12 @@ public class EnnemyDistance : MonoBehaviour
         firstShoot = false;
         canShoot = false;
         
+    }
+
+    private void Awake()
+    {
+        firstShoot = false;
+        canShoot = false;
     }
 
     void OnTriggerStay2D(Collider2D col)
@@ -84,7 +92,7 @@ public class EnnemyDistance : MonoBehaviour
 
     IEnumerator CanShoot()
     {
-        firstShoot = false;
+        firstShoot = true;
         yield return new WaitForSeconds(delay);
         canShoot = true;
     }
